@@ -1,0 +1,27 @@
+id: '17248307279340.9465268135010168'
+name: Login
+url: login
+roleIds: []
+disableInMenu: false
+hideFromMenu: false
+parentPageId: ''
+slots:
+  - id: '17248307279340.7709266339616332'
+    name: content
+    children:
+      - id: '17248307279340.3048164309410759'
+        definitionId: grid
+        parentSlotId: '17248307279340.7709266339616332'
+        styles: {}
+        properties:
+          name: login
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '17248307279340.5763528785284922'
+            name: content
+            children:
+              - components/form.yml

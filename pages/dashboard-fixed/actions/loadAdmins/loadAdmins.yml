@@ -1,0 +1,93 @@
+id: '17248315158600.7200019424480502'
+name: loadAdmins
+nameConfigured: true
+steps:
+  - id: '17248315951540.6093567285335246'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17248315158600.7018758062262227'
+                type: LOAD_COLLECTION
+                params:
+                  - type: datasourceId
+                    value: Sample Database
+                    valueType: string
+                  - type: resourceId
+                    value: users
+                    valueType: string
+                  - type: filters
+                    value:
+                      - column: name
+                        operation: like
+                        value:
+                          value: '{{ui.search2.value}}'
+                    valueType: custom
+                  - type: ordering
+                    value:
+                      limit:
+                        value: 1000
+                      offset:
+                        value: ''
+                      orderBy:
+                        value: id
+                      orderDirection:
+                        value: asc
+                    valueType: custom
+                  - type: additionalParams
+                    value:
+                      - name: ''
+                        value: ''
+                    valueType: custom
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps:
+              - id: '17248316198420.1363691216993741'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: ./code.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+mode: auto
+modeConfigured: false
+parentPageId: '17248315158560.6753291336554781'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.loadAdmins.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.loadAdmins.name}}" successfully executed
+  showErrorToast: true
+  errorToast: Action "{{actions.loadAdmins.name}}" has failed
+  delay: '0'
+  runWhenFirstReferenced: true
+kind: workflow
+selected: true
+configured: true

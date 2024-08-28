@@ -1,0 +1,17 @@
+id: '17248301612200.6247489156655381'
+kind: store_item
+name: isAdmin
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17248299593010.4108151589767117'
+storeItem:
+  value: 'true'
+  valueType: boolean
+  initialValue: 'true'
+  version: 1
+selected: true
+configured: true
+config:
+  preserveStateOnPageChange: true

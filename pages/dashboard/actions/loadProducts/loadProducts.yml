@@ -1,0 +1,31 @@
+id: '17248331817100.9147703374420599'
+name: loadProducts
+nameConfigured: true
+steps:
+  - id: '17248332136380.21453692551403325'
+    type: customAsyncCode
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    name: code
+singleStep: true
+mode: auto
+modeConfigured: false
+parentPageId: '1'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.loadProducts.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.loadProducts.name}}" successfully executed
+  showErrorToast: true
+  errorToast: Action "{{actions.loadProducts.name}}" has failed
+  delay: '0'
+  runWhenFirstReferenced: true
+kind: workflow
+selected: true
+configured: true

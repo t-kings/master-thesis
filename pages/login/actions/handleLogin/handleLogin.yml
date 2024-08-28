@@ -1,0 +1,62 @@
+id: '17248309121340.034050213238347116'
+kind: workflow
+name: handleLogin
+nameConfigured: true
+steps:
+  - id: '17248309275180.5438517165188119'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17248301612200.6247489156655381'
+        valueType: string
+      - type: value
+        value: return {{ui.form.value.username?.toLowerCase()}}==="admin"
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17248310318480.8508377947371324'
+    type: navigation
+    name: navigate
+    params:
+      - type: url
+        value: '{{routes.dashboard.url}}'
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: queryParams
+        value:
+          mode: structured
+          value:
+            custom: ''
+            structured:
+              - name: ''
+                value: ''
+        valueType: custom
+        interpolationType: string
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '17248307279340.9465268135010168'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.handleLogin.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.handleLogin.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.handleLogin.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: false

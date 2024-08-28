@@ -1,0 +1,70 @@
+id: '17248328293800.0022776267439754694'
+kind: workflow
+name: createProduct
+nameConfigured: true
+steps:
+  - id: '17248328603630.39601844633430794'
+    type: CREATE_ENTITY
+    name: create
+    params:
+      - type: datasourceId
+        value: Sample Database
+        valueType: string
+      - type: resourceId
+        value: products
+        valueType: string
+      - type: entity
+        value: ./create-entity.yml
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: true
+  - id: '17248330730560.31847803916180606'
+    type: putInLocalStorage
+    name: save
+    params:
+      - type: name
+        value: products
+        valueType: string
+      - type: value
+        value: '{{(localStorage.products||[]).concat(ui.productForm.value)}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.createProduct.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.createProduct.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.createProduct.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: false

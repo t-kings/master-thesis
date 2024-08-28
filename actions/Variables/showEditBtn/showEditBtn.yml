@@ -1,0 +1,10 @@
+id: '16474422598690.5031457618651383'
+nameConfigured: true
+name: showEditBtn
+kind: store_item
+parentId: '17248299593010.4108151589767117'
+storeItem:
+  value: ''
+  valueType: boolean
+  initialValue: 'false'
+steps: []

@@ -1,0 +1,140 @@
+id: '17248331704540.04742589740555547'
+definitionId: smartTable
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 494
+      w: 24
+      h: 80
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 730
+      w: 24
+      h: 80
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  data: '{{actions.loadProducts.data}}'
+  name: productsTable
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Products
+  showLoading:
+    withData: true
+    dataValue: 'false'
+    value: false
+actions: {}
+slots:
+  - id: '17248331704540.41096686763378965'
+    name: columns
+    children:
+      - id: '17248331704920.18211505076398038'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString64
+          prop: code
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        parentSlotId: '17248331704540.41096686763378965'
+        index: 0
+        slots: []
+      - id: '17248331704920.47729906360230134'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString65
+          prop: product_name
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        parentSlotId: '17248331704540.41096686763378965'
+        index: 1
+        slots: []
+      - id: '17248331704920.7137636999074137'
+        definitionId: atomicCurrency
+        parentSlotId: '17248331704540.41096686763378965'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicCurrency
+          prop: price
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          filter: true
+          widthMode: auto
+          width: 120
+        index: 2
+        slots: []
+      - id: '17248331704920.6444075594944667'
+        definitionId: atomicString
+        parentSlotId: '17248331704540.41096686763378965'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString66
+          prop: quantity
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          widthMode: auto
+          width: 120
+        index: 3
+        slots: []
